@@ -4,9 +4,8 @@
 }
 
 .toDoList {
-  display: flex;
-  justify-content: center;
   padding-top: 100px;
+  padding-left: 50px;
   gap: 50px;
 }
 
@@ -30,7 +29,7 @@
   font-weight: bold;
   padding-left: 20px;
 }
-#deleteButton {
+#removeButton {
   background-color: red;
   color: whitesmoke;
   border-radius: 10px;
@@ -39,7 +38,7 @@
   box-shadow: 0 4px 6px rgba(0.9, 0.3, 1, 0.1);
   transition: 0.3s ease;
 }
-#deleteButton:hover {
+#removeButton:hover {
   background-color: blue;
   color: black;
 }
