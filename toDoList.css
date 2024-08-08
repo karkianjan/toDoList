@@ -5,8 +5,9 @@
 
 .toDoList {
   padding-top: 100px;
-  padding-left: 50px;
+  padding-left: 400px;
   gap: 50px;
+  padding-bottom: 30px;
 }
 
 #taskAddButton {
@@ -23,6 +24,7 @@
   justify-content: center;
   width: 100px;
   height: 40px;
+  margin-left: 430px;
 }
 
 #taskAddButton:hover {
@@ -32,7 +34,8 @@
 
 #inputToDoList::placeholder,
 #inputName::placeholder,
-#inputPost::placeholder {
+#inputPost::placeholder,
+#inputTime::placeholder {
   color: #b6c3c5;
   font-weight: bold;
   padding-left: 20px;
@@ -69,4 +72,10 @@
 #editButton:hover {
   background-color: blue;
   color: black;
+}
+
+#taskTable {
+  color: blue;
+  padding-top: 40px;
+  padding-left: 50px;
 }
