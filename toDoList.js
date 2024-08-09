@@ -1,7 +1,10 @@
 document.getElementById("taskAddButton").addEventListener("click", addTask);
 
-let list = [];
-
+let list = [{}];
+const inputName = document.getElementById("inputName").value.trim();
+const toDoList = document.getElementById("inputToDoList").value.trim();
+const post = document.getElementById("inputPost").value.trim();
+const time = document.getElementById("inputTime").value.trim();
 function addTask() {
   const inputName = document.getElementById("inputName").value.trim();
   const toDoList = document.getElementById("inputToDoList").value.trim();
@@ -26,18 +29,24 @@ function updateTaskList() {
 
     row.innerHTML = `
       <td>${task.taskId}</td>
-      <td><input type="text" value="${task.inputName}" onchange="editTask(${index}, 'inputName', this.value)" /></td>
-      <td><input type="text" value="${task.toDoList}" onchange="editTask(${index}, 'toDoList', this.value)" /></td>
-      <td><input type="text" value="${task.post}" onchange="editTask(${index}, 'post', this.value)" /></td>
-      <td><input type="text" value="${task.time}" onchange="editTask(${index}, 'time', this.value)" /></td>
+      <td>${task.inputName}</td>
+      <td>${task.toDoList}</td>
+      <td>${task.post}</td>
+      <td>${task.time}</td>
       <td>
-        <button id="removeButton" onclick="removeTask(${index})" >Remove</button>
-        <button id="editButton" onclick="editTask(${index})" >Edit</button>
+        <button id="removeButton" onClick="removeTask(${index})">Remove</button>
+        <button id="editButton" onClick="editTask(${task})">Edit</button>
       </td>
     `;
 
     taskList.appendChild(row);
   });
+}
+
+function editTask(task) {
+  console.log("hello world");
+  alert("hello");
+  inputName.innerText = task.inputName;
 }
 
 function removeTask(index) {
@@ -46,6 +55,7 @@ function removeTask(index) {
   saveTasks();
 }
 
+// Commented out editTask function as it is no longer needed
 // function editTask(index, ID, value) {
 //   list[index][ID] = value.trim();
 //   updateTaskList();
