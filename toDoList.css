@@ -4,12 +4,16 @@
 }
 
 .toDoList {
-  padding-top: 100px;
-  padding-left: 600px;
-  gap: 50px;
-  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
+.addButton {
+  display: flex;
+  justify-content: center;
+}
 #taskAddButton {
   border-radius: 10px;
   color: whitesmoke;
@@ -18,18 +22,14 @@
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0.9, 0.3, 1, 0.1);
   transition: 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
   width: 100px;
   height: 40px;
-  margin-left: 630px;
 }
 
 #taskAddButton:hover {
   background-color: blue;
-  color: black;
+  color: white;
 }
 
 #inputToDoList::placeholder,
@@ -38,11 +38,8 @@
 #inputTime::placeholder {
   color: #b6c3c5;
   font-weight: bold;
-  padding-left: 10px;
-  font-family: cursive;
 }
 #removeButton {
-  margin-left: 50px;
   background-color: red;
   color: whitesmoke;
   border-radius: 10px;
@@ -55,7 +52,7 @@
 }
 #removeButton:hover {
   background-color: blue;
-  color: black;
+  color: white;
 }
 
 #editButton {
@@ -66,31 +63,31 @@
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0.9, 0.3, 1, 0.1);
   transition: 0.3s ease;
-  margin-left: 50px;
   width: 100px;
   height: 40px;
 }
 #editButton:hover {
   background-color: blue;
-  color: black;
+  color: white;
 }
 
 #taskTable {
   color: blue;
-  padding-top: 40px;
-  padding-left: 50px;
 }
 
 #tasktable {
   border-collapse: collapse;
-  width: 100%;
+  text-align: center;
 }
 
+table {
+  padding-top: 40px;
+  width: 80%;
+  margin-inline: auto;
+}
 th,
 td {
-  padding-left: 100px;
-  padding-top: 15px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ddd;
   background-color: #b3ccff;
 }
@@ -100,4 +97,9 @@ td:hover {
 }
 th:hover {
   background-color: #ff9966;
+}
+
+input {
+  width: 200px;
+  padding: 10px;
 }
