@@ -5,7 +5,7 @@
 
 .toDoList {
   padding-top: 100px;
-  padding-left: 400px;
+  padding-left: 600px;
   gap: 50px;
   padding-bottom: 30px;
 }
@@ -24,7 +24,7 @@
   justify-content: center;
   width: 100px;
   height: 40px;
-  margin-left: 430px;
+  margin-left: 630px;
 }
 
 #taskAddButton:hover {
@@ -38,7 +38,8 @@
 #inputTime::placeholder {
   color: #b6c3c5;
   font-weight: bold;
-  padding-left: 20px;
+  padding-left: 10px;
+  font-family: cursive;
 }
 #removeButton {
   margin-left: 50px;
@@ -78,4 +79,25 @@
   color: blue;
   padding-top: 40px;
   padding-left: 50px;
+}
+
+#tasktable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding-left: 100px;
+  padding-top: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: #b3ccff;
+}
+
+td:hover {
+  background-color: whitesmoke;
+}
+th:hover {
+  background-color: #ff9966;
 }
