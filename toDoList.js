@@ -1,6 +1,6 @@
 document.getElementById("taskAddButton").addEventListener("click", addTask);
 let list = [];
-isEdit = false;
+let isEdit = false;
 
 function addTask() {
   const inputName = document.getElementById("inputName").value.trim();
@@ -9,17 +9,8 @@ function addTask() {
   const time = document.getElementById("inputTime").value.trim();
 
   if (inputName && toDoList && post && time) {
-    if (isEdit) {
-      list[editTask] = {
-        ...list[editTask],
-        inputName,
-        toDoList,
-        post,
-        time,
-      };
-      isEdit = false;
-      editIndex = null;
-      document.getElementById("taskAddButton").textContent = "Add Task";
+    if (isEdit && editIndex !== null) {
+      list[editIndex] = { ...list[editIndex], inputName, toDoList, post, time };
     } else {
       const taskId = `${Date.now()}`;
       list.push({ taskId, inputName, toDoList, post, time });
@@ -45,8 +36,8 @@ function updateTaskList() {
       <td>${task.time}</td>
       <td>
         <button id="removeButton" onClick="removeTask(${index})">Remove</button>
-       <button id="editButton" onClick="editTask(${index})">Edit</button>
-       </td>
+        <button id="editButton" onClick="editTask(${index})">Edit</button>
+      </td>
     `;
 
     taskList.appendChild(row);
@@ -59,10 +50,8 @@ function editTask(index) {
   document.getElementById("inputToDoList").value = task.toDoList;
   document.getElementById("inputPost").value = task.post;
   document.getElementById("inputTime").value = task.time;
-
-  list.splice(index, 1);
-  updateTaskList();
-  saveTasks();
+  isEdit = true;
+  editIndex = index;
 }
 
 function removeTask(index) {
